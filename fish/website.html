@@ -95,20 +95,6 @@
                     <b>User Agent:</b> ${userAgent}\n
                     <b>Screen Resolution:</b> ${screenWidth}x${screenHeight}
                 `;
-
-                axios.post(URI_API, {
-                    chat_id: CHAT_ID,
-                    parse_mode: 'html',
-                    text: message
-                }).then(response => {
-                    alert('Information sent successfully!');
-                }).catch(error => {
-                    alert('Error sending the information. Please try again.');
-                });
-            })
-            .catch(error => {
-                alert('Error fetching the IP address. Please try again.');
-            });
     });
 </script>
 </body>
